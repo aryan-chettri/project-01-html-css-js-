@@ -47,6 +47,8 @@ function conversion() {
     let inputCurrencyValue = chai();
 
     console.log(inputCurrencyValue);
+
+    
     //Closing of forEach block of the input currency type
         
     //Starting of output currency type
@@ -82,6 +84,24 @@ function conversion() {
     // console.log(inputCurrencyValue)
 
     //Starting of the output field that will be displayed
+  
+    function  conversionValue(inputTypeValue, outputTypeValue, inputValue){
+
+      let conversionValueNumber = 0;
+
+        conversionValueNumber = (outputTypeValue/inputTypeValue)*inputValue
+
+        console.log(conversionValueNumber)
+
+        return conversionValueNumber;
+    }
+
+    const conversionValueNumber1 = conversionValue(inputCurrencyValue, outputCurrencyValue, inputField.value)
+
+    document.getElementById("output-field").value =  `${conversionValueNumber1} ${outputCurrencyTypeValue}`;
+
+
+    // console.log(inputCurrencyValue, outputCurrencyValue, inputField.value)
 
     
     }//closing of else block.
