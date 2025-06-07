@@ -20,6 +20,10 @@ function conversion() {
     alert("input field is required");
   } else {
 
+
+    let output = document.querySelector('.output-currency-type')
+
+    console.log(output.value)
     
     const chai = () => {
 
@@ -61,15 +65,13 @@ function conversion() {
 
         let outputCurrencyTypeValue = item.value
 
-        console.log(outputCurrencyTypeValue);
+        // console.log(outputCurrencyTypeValue)
     //   let inputCurrencyValue = 0;
 
       for (let key in exchangeRates) {
         if (key === outputCurrencyTypeValue) {
 
-            // console.log(exchangeRates[key])
-
-            // console.log(exchangeRates[key])
+            console.log(key);
             return exchangeRates[key];
         }
       }
@@ -96,9 +98,9 @@ function conversion() {
         return conversionValueNumber;
     }
 
-    const conversionValueNumber1 = conversionValue(inputCurrencyValue, outputCurrencyValue, inputField.value)
+    const conversionValueNumber1 = conversionValue(inputCurrencyValue, outputCurrencyValue, inputField.value).toFixed(2);
 
-    document.getElementById("output-field").value =  `${conversionValueNumber1} ${outputCurrencyTypeValue}`;
+    document.getElementById("output-field").value =  `${conversionValueNumber1} ${output.value} `;
 
 
     // console.log(inputCurrencyValue, outputCurrencyValue, inputField.value)
