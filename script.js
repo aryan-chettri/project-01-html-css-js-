@@ -20,6 +20,10 @@ function conversion() {
     alert("input field is required");
   } else {
 
+
+    let output = document.querySelector('.output-currency-type')
+
+    console.log(output.value)
     
     const chai = () => {
 
@@ -47,6 +51,8 @@ function conversion() {
     let inputCurrencyValue = chai();
 
     console.log(inputCurrencyValue);
+
+    
     //Closing of forEach block of the input currency type
         
     //Starting of output currency type
@@ -59,15 +65,13 @@ function conversion() {
 
         let outputCurrencyTypeValue = item.value
 
-        console.log(outputCurrencyTypeValue);
+        // console.log(outputCurrencyTypeValue)
     //   let inputCurrencyValue = 0;
 
       for (let key in exchangeRates) {
         if (key === outputCurrencyTypeValue) {
 
-            // console.log(exchangeRates[key])
-
-            // console.log(exchangeRates[key])
+            console.log(key);
             return exchangeRates[key];
         }
       }
@@ -82,6 +86,24 @@ function conversion() {
     // console.log(inputCurrencyValue)
 
     //Starting of the output field that will be displayed
+  
+    function  conversionValue(inputTypeValue, outputTypeValue, inputValue){
+
+      let conversionValueNumber = 0;
+
+        conversionValueNumber = (outputTypeValue/inputTypeValue)*inputValue
+
+        console.log(conversionValueNumber)
+
+        return conversionValueNumber;
+    }
+
+    const conversionValueNumber1 = conversionValue(inputCurrencyValue, outputCurrencyValue, inputField.value).toFixed(2);
+
+    document.getElementById("output-field").value =  `${conversionValueNumber1} ${output.value} `;
+
+
+    // console.log(inputCurrencyValue, outputCurrencyValue, inputField.value)
 
     
     }//closing of else block.
